@@ -19,7 +19,10 @@ function Navbar() {
                             <Link to="/add-task" className="bg-indigo-500 px-4 py-1 rounded-sm">Añadir Entradas</Link>
                         </li>
                         <li>
-                            <Link to="/login"
+                            <Link to="/home" className="bg-indigo-500 px-4 py-1 rounded-sm">Buscar equipos</Link>
+                        </li>
+                        <li>
+                            <Link to="/home"
                             className="bg-indigo-500 px-4 py-1 rounded-sm"
                                 onClick={() => {
                                     logout();

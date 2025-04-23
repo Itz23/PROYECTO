@@ -24,7 +24,7 @@ function PrintPage() {
     <div className="ticket">
       <div className="header">
         <div className="logo-placeholder flex justify-center mb-2">
-            <img src={logo} className="h-12 object-contain" />
+          <img src={logo} className="h-12 object-contain" />
         </div>
         <h2 className="font-bold">Salida de equipo de computo</h2>
       </div>
@@ -38,16 +38,16 @@ function PrintPage() {
         <div><strong>Hardware:</strong> {data.hardware}</div>
         {data.status === "usado" && (
           <>
-        <div><strong>Diagnóstico:</strong> {data.diagnostic}</div>
-        <div><strong>Estado Final:</strong> {data.finalStatus}</div>
-        <div><strong>Trabajo Realizado:</strong> {data.workDone}</div>
-        </>
+            <div><strong>Diagnóstico:</strong> {data.diagnostic}</div>
+            <div><strong>Estado Final:</strong> {data.finalStatus}</div>
+            <div><strong>Trabajo Realizado:</strong> {data.workDone}</div>
+          </>
         )}
         <div><strong>Fecha:</strong> {dayjs(data.date).format("DD/MM/YYYY")}</div>
       </div>
       <div className="firma">
-        <div>_____________________________<br/><strong>Nombre y firma de quien recibe</strong></div>
-        <div>_____________________________<br/><strong>Nombre y firma de quien entrega</strong></div>
+        <div>_____________________________<br /><strong>Nombre y firma de quien recibe</strong></div>
+        <div>_____________________________<br /><strong>Nombre y firma de quien entrega</strong></div>
       </div>
     </div>
   );
@@ -66,6 +66,7 @@ function PrintPage() {
           background: white;
           font-family: Arial, sans-serif;
           color: #333;
+          margin: 0 auto;
         }
 
         .ticket {
@@ -119,6 +120,7 @@ function PrintPage() {
 
           .print-container {
             padding: 0.5cm;
+            margin: 0 auto;
           }
 
           .divider {
