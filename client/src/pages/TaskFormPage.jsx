@@ -229,13 +229,13 @@ function TaskFormPage() {
       type="text"
       placeholder="Procesador"
       {...register("processor", {
-        pattern: {
-          value: /^[a-zA-Z0-9-\s]+$/,
-          message: "Letras minusculas, números y guiones",
-        },
+
+            required: "Procesador requerido",
+
       })}
       className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
     />
+        {errors.processor && <p className="text-red-500">{errors.processor.message}</p>}
   </div>
 
   <div>
@@ -243,9 +243,14 @@ function TaskFormPage() {
     <input
       type="text"
       placeholder="Sistema operativo"
-      {...register("opeSystem")}
+      {...register("opeSystem", {
+        
+        required: "Sistema operativo requerido",
+     
+    })}
       className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
     />
+    {errors.opeSystem && <p className="text-red-500">{errors.opeSystem.message}</p>}
   </div>
 
   <div>
@@ -254,10 +259,9 @@ function TaskFormPage() {
       type="text"
       placeholder="Disco duro"
       {...register("hardDisc", {
-        pattern: {
-          value: /^[a-zA-Z0-9\s]+$/,
-          message: "Solo letras y números",
-        },
+        
+          required: "Disco duro requerido",
+       
       })}
       className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
     />
@@ -270,6 +274,7 @@ function TaskFormPage() {
       type="number"
       placeholder="Memoria RAM"
       {...register("ram", {
+        required: "Ram requerida",
         min: { value: 1, message: "Debe ser mayor que 0" },
       })}
       className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
@@ -283,10 +288,7 @@ function TaskFormPage() {
       type="text"
       placeholder="MAC Ethernet"
       {...register("ethernet", {
-        pattern: {
-          value: /^([A-F0-9]{2}[:-]){5}([A-F0-9]{2})$/i,
-          message: "MAC inválida (usa - o :)",
-        },
+          required: "Ethernet requerido",
       })}
       className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md uppercase"
     />
@@ -299,6 +301,7 @@ function TaskFormPage() {
       type="text"
       placeholder="MAC Wifi"
       {...register("wifi", {
+        required: "MAC Wifi requerido",
         pattern: {
           value: /^([A-F0-9]{2}[:-]){5}([A-F0-9]{2})$/i,
           message: "MAC inválida (usa - o :)",
@@ -315,6 +318,7 @@ function TaskFormPage() {
       type="text"
       placeholder="Cambios realizados"
       {...register("changes", {
+        required: "Cambios requerido",
         pattern: {
           value: /^[a-zA-Z\s]+$/,
           message: "Ingresa solo letras",
@@ -334,6 +338,7 @@ function TaskFormPage() {
         type="text"
         placeholder="Nombre de quien reporta"
         {...register("reporter", {
+          required: "Persona que reporta requerida",
           pattern: {
             value: /^[a-zA-Z\s]+$/,
             message: "Solo letras",
@@ -350,9 +355,13 @@ function TaskFormPage() {
       <input
         type="text"
         placeholder="Diagnóstico del sistema"
-        {...register("diagnostic")}
+        {...register("diagnostic", {
+          required: "Diagnóstico requerido",
+        })}
         className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
       />
+      {errors.diagnostic && <p className="text-red-500">{errors.diagnostic.message}</p>}
+
     </div>
 
     {/* FINAL STATUS */}
@@ -361,10 +370,15 @@ function TaskFormPage() {
       <input
         type="text"
         placeholder="Estado final del equipo"
-        {...register("finalStatus")}
+        {...register("finalStatus", {
+            required: "estatus final  requerido",
+        })}
         className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
       />
+          {errors.finalStatus && <p className="text-red-500">{errors.finalStatus.message}</p>}
+
     </div>
+
 
     {/* REPORTED ISSUE */}
     <div>
@@ -372,9 +386,15 @@ function TaskFormPage() {
       <input
         type="text"
         placeholder="Problema reportado"
-        {...register("reportedIssue")}
+        {...register("reportedIssue", {
+          
+            required: "problema reportado  requerido",
+        
+        })}
         className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
       />
+ {errors.reportedIssue && <p className="text-red-500">{errors.reportedIssue.message}</p>}
+
     </div>
 
     {/* WORK DONE */}
@@ -383,9 +403,16 @@ function TaskFormPage() {
       <input
         type="text"
         placeholder="Acciones realizadas"
-        {...register("workDone")}
+        {...register("workDone", {
+          
+            required: "trabajo realizado requerido",
+         
+        })}
         className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md"
       />
+       {errors.reportedIssue && <p className="text-red-500">{errors.reportedIssue.message}</p>}
+
+      
     </div>
   </>
 )}

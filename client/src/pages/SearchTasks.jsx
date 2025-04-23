@@ -47,7 +47,7 @@ function SearchTasks() {
     <div className="p-4">
       <h2 className="text-xl font-bold mb-4">Buscar Equipos por numero de serie, agencia o fecha de creación:</h2>
       <div className="flex flex-wrap gap-2 mb-4">
-        <input name="serialNumber" placeholder="Número de serie" onChange={handleChange} className="p-2 border rounded" />
+        <input name="serialNumber" placeholder="Número de serie" onChange={handleChange} className="p-2 border rounded text-black" />
         <input name="agency" placeholder="Agencia" onChange={handleChange} className="p-2 border rounded text-black" />
         <input name="date" type="date" onChange={handleChange} className="p-2 border rounded text-black" />
         <button onClick={handleSearch} className="bg-blue-500 text-white px-4 py-2 rounded">Buscar</button>
