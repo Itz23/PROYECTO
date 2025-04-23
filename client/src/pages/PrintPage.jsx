@@ -114,13 +114,25 @@ function PrintPage() {
         }
 
         @media print {
-          body {
-            margin: 0;
-          }
+          html, body {
+          width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+    display: flex;
+    align-items: center;        /* Centrado vertical */
+    justify-content: center;    /* Centrado horizontal */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
           .print-container {
-            padding: 0.5cm;
             margin: 0 auto;
+    padding: 0.5cm;
+    box-shadow: none;
+    background: white !important;
           }
 
           .divider {
